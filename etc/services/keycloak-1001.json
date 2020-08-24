@@ -1,7 +1,7 @@
 {
-    "@class" : "org.apereo.cas.services.RegexRegisteredService",
+    "@class" : "org.jasig.cas.services.RegexRegisteredService",
     "serviceId" : "^(https|http)://.*",
     "name" : "keycloak",
     "id" : 1001,
-    "evaluationOrder" : 1,
+    "evaluationOrder" : 1
   }
