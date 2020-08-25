@@ -3,5 +3,31 @@
     "serviceId" : "^(https|http)://.*",
     "name" : "keycloak",
     "id" : 1001,
+    "proxyPolicy" : {
+        "@class" : "org.jasig.cas.services.RefuseRegisteredServiceProxyPolicy"
+    },
+    "usernameAttributeProvider" : {
+    "@class" : "org.jasig.cas.services.DefaultRegisteredServiceUsernameProvider"
+    },
+    "logoutType" : "BACK_CHANNEL",
+    "attributeReleasePolicy" : {
+        "@class" : "org.jasig.cas.services.ReturnAllowedAttributeReleasePolicy",
+        "principalAttributesRepository" : {
+            "@class" : "org.jasig.cas.authentication.principal.cache.CachingPrincipalAttributesRepository",
+            "duration" : {
+                "@class" : "javax.cache.expiry.Duration",
+                "timeUnit" : [ "java.util.concurrent.TimeUnit", "HOURS" ],
+                "expiration" : 2
+            },
+            "mergingStrategy" : "NONE"
+        },
+        "authorizedToReleaseCredentialPassword" : false,
+        "authorizedToReleaseProxyGrantingTicket" : false
+    },
+    "accessStrategy" : {
+        "@class" : "org.jasig.cas.services.DefaultRegisteredServiceAccessStrategy",
+        "enabled" : true,
+        "ssoEnabled" : true
+    },
     "evaluationOrder" : 1
-  }
+}
