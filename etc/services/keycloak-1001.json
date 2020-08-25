@@ -7,7 +7,7 @@
         "@class" : "org.jasig.cas.services.RefuseRegisteredServiceProxyPolicy"
     },
     "usernameAttributeProvider" : {
-    "@class" : "org.jasig.cas.services.DefaultRegisteredServiceUsernameProvider"
+        "@class" : "org.jasig.cas.services.DefaultRegisteredServiceUsernameProvider"
     },
     "logoutType" : "BACK_CHANNEL",
     "attributeReleasePolicy" : {
